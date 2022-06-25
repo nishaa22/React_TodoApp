@@ -1,29 +1,28 @@
-import { PropTypes } from 'prop-types'
-import React from 'react'
+import { PropTypes } from "prop-types";
+import React, { useContext } from "react";
+import TodoState from "../context/todoState";
 
-const Icons = (props) => {
-    const { handleEdit, type, id } = props
-    return (
-        <>
-            <i
-                className={`fas mx-2  ${
-                    type === 'edit' ? 'fa-edit' : 'fa-trash-alt'
-                } `}
-                onClick={() => {
-                    handleEdit(id)
-                }}
-            ></i>
-        </>
-    )
-}
+const Icons = () => {
+  const { handleEdit, type, id } = useContext(TodoState);
+  return (
+    <>
+      <i
+        className={`fas mx-2  ${type === "edit" ? "fa-edit" : "fa-trash-alt"} `}
+        onClick={() => {
+          handleEdit(id);
+        }}
+      ></i>
+    </>
+  );
+};
 Icons.protoTypes = {
-    handleEdit: PropTypes.func,
-    type: PropTypes.string,
-    id: PropTypes.number,
-}
+  handleEdit: PropTypes.func,
+  type: PropTypes.string,
+  id: PropTypes.number,
+};
 Icons.defaultProp = {
-    handleEdit: () => {},
-    type: '',
-    id: 0,
-}
-export default Icons
+  handleEdit: () => {},
+  type: "",
+  id: 0,
+};
+export default Icons;
