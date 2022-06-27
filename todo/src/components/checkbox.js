@@ -2,8 +2,9 @@ import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import TodoState from "../context/todoState";
 
-const Checkbox = () => {
-  const { handleCheck, isCompleted, id } = useContext(TodoState);
+const Checkbox = (props) => {
+  const { handleCheck } = useContext(TodoState);
+  const {val:{isCompleted='false',id=""}={}}=props
   return (
     <>
       <input

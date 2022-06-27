@@ -1,11 +1,16 @@
-import React from "react";
+import React,{useContext} from "react";
 import Button from "./button";
 import Form from "./form";
 import List from "./list";
 import { BUTTON_NAME } from "../constant/index";
-// export const TodoContext = createContext();
+import { getListType } from "../util";
+// import TodoState from "../context/todoState";
+import TodoContext from '../context/todoState'
 
-const Todos = () => {
+const Todos = (props) => {
+  const dada=useContext(TodoContext)
+  // const {value,val:{name=""}={}} =props
+
   // const [task, setTask] = useState('')
   // const [listType, setListType] = useState('')
   // const [todoList, setTodoList] = useState({
@@ -108,23 +113,44 @@ const Todos = () => {
   //         setListType('')
   //     }
   // }
+  console.log(dada,'XXXXX')
   return (
     <>
       <div className="container my-5">
         <h1>Todo App</h1>
         <hr className="mb-5" />
 
-        <Form />
+        {/* <Form
+          handleSubmit
+          task
+          setTask
+        /> */}
 
         <hr className="ms-4" />
+{/* 
+        <List
+          setIsEdit
+          handleDelete
+          handleEdit
+          editId
+          handleCheck
+          todolist
+          listType
+          getListType
+          handleEditList
+        /> */}
 
-        <List />
-
-        <div className="filterTask my-3">
+        {/* <div className="filterTask my-3">
           {BUTTON_NAME.map((value, index) => {
-            return <Button />;
+            return (
+              <Button
+                key={index}
+                name={value.name}
+                handleShowList
+              />
+            );
           })}
-        </div>
+        </div> */}
       </div>
     </>
   );

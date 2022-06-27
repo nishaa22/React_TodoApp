@@ -31,14 +31,14 @@ const List = () => {
       {getListType(todolist, listType).map((val, index) => {
         return (
           <FormData
-            handleCheck={handleCheck}
+            handleCheck
             key={index}
             val={val}
             editId={editId}
-            setIsEdit={setIsEdit}
-            handleEdit={handleEdit}
-            handleDelete={handleDelete}
-            handleEditList={handleEditList}
+            setIsEdit
+            handleEdit
+            handleDelete
+            handleEditList
           />
         );
       })}

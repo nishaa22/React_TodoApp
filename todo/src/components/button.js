@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import TodoState from "../context/todoState";
-const Button = () => {
-  const { name, handleShowList } = useContext(TodoState);
-  // const { name, handleShowList } = props
+const Button = (props) => {
+  const { handleShowList } = useContext(TodoState);
+  const { val:{name=""}={} } = props
   return (
     <button
       type="submit"

@@ -3,7 +3,9 @@ import React, { useContext } from "react";
 import TodoState from "../context/todoState";
 
 const Icons = () => {
-  const { handleEdit, type, id } = useContext(TodoState);
+  const { handleEdit } = useContext(TodoState);
+  const {type,val:{id=""}={} } = useContext(TodoState);
+
   return (
     <>
       <i

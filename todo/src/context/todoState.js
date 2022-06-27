@@ -1,6 +1,7 @@
-import React, { useState } from "react";
-import { getListType } from "../util";
-import TodoContext from "../components/todos";
+import React, { useState ,createContext} from "react";
+// import TodoContext from "../components/todos";
+
+export const TodoContext = createContext({});
 
 const TodoState = (props) => {
   const [task, setTask] = useState("");
@@ -112,17 +113,21 @@ const TodoState = (props) => {
     handleCheck,
     todolist: todoList,
     listType,
-    getListType,
+    // getListType,
     handleEditList,
     handleSubmit,
     task,
     setTask: (e) => setTask(e.target.value),
-    key: index,
-    name: value.name,
+    // key: index,
+    // name: value.name,
     handleShowList,
   };
+  // const TodoContext = createContext(state);
+  // console.log(state,'AAAAA',props.children)
   return (
-    <TodoContext.Provider value={state}>{props.children}</TodoContext.Provider>
+    <TodoContext.Provider value={state}>
+      {props.children}
+      </TodoContext.Provider>
   );
 };
 

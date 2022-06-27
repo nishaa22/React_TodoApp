@@ -6,7 +6,7 @@ import Input from "./input";
 import Checkbox from "./checkbox";
 import TodoState from "../context/todoState";
 
-const FormData = () => {
+const FormData = (props) => {
   const {
     editId,
     handleCheck,
@@ -14,9 +14,8 @@ const FormData = () => {
     handleEdit,
     handleEditList,
     setIsEdit,
-    val: { isCompleted = false, id = "", name = "" } = {},
   } = useContext(TodoState);
-
+const {val: { isCompleted = false, id = "", name = "" } = {}}=props
   return (
     <>
       <div className="form-check">
@@ -43,8 +42,8 @@ const FormData = () => {
           </label>
 
           <div className="icons">
-            <Icons type="edit" handleEdit={handleEdit} id={id} />
-            <Icons type="delete" handleEdit={handleDelete} id={id} />
+            <Icons type="edit" handleEdit id={id} />
+            <Icons type="delete" handleEdit id={id} />
           </div>
         </div>
         <hr />

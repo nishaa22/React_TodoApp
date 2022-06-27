@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import TodoState from "../context/todoState";
+// import TodoState from "../context/todoState";
 
-const Badge = () => {
-  const { isCompleted = false } = useContext(TodoState);
+const Badge = (props) => {
+  const { val:{isCompleted = false}={} } = props;
   return (
     <>
       <span className="mx-5">{isCompleted ? "" : ""}</span>

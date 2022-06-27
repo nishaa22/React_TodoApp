@@ -2,12 +2,12 @@ import React, { useContext } from "react";
 import { PropTypes } from "prop-types";
 import TodoState from "../context/todoState";
 
-const Input = () => {
+const Input = (props) => {
   const {
-    value,
     handleInputChange,
     handleBlurChange = () => {},
   } = useContext(TodoState);
+  const {value}=props;
   return (
     <>
       <input
