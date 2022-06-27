@@ -4,9 +4,9 @@ import TodoState from "./context/todoState";
 function App() {
   return (
     <>
-      <TodoState>
+      {/* <TodoState> */}
         <Todos />
-      </TodoState>
+      {/* </TodoState> */}
     </>
   );
 }

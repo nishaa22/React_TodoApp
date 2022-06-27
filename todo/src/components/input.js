@@ -1,13 +1,8 @@
 import React, { useContext } from "react";
 import { PropTypes } from "prop-types";
-import TodoState from "../context/todoState";
 
 const Input = (props) => {
-  const {
-    handleInputChange,
-    handleBlurChange = () => {},
-  } = useContext(TodoState);
-  const {value}=props;
+  const { value, handleBlurChange=()=>{}, handleInputChange } = props
   return (
     <>
       <input
@@ -35,7 +30,7 @@ Input.propTypes = {
 };
 Input.defaultProp = {
   value: "",
-  handleInputChange: () => {},
-  handleBlurChange: () => {},
+  handleInputChange: () => { },
+  handleBlurChange: () => { },
 };
 export default Input;

@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
-import TodoState from "../context/todoState";
+import {TodoContext} from "./todos";
 const Button = (props) => {
-  const { handleShowList } = useContext(TodoState);
+  const { handleShowList } = useContext(TodoContext);
   const { val:{name=""}={} } = props
   return (
     <button

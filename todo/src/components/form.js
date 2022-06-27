@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import Input from "./input";
-import TodoState from "../context/todoState";
+// import TodoState from "../context/todoState";
+import {TodoContext} from "./todos";
 
 const Form = () => {
-  const { handleSubmit, task, setTask } = useContext(TodoState);
-  // const { handleSubmit, task, setTask } = props
+  const  { handleSubmit, task, setTask }  = useContext(TodoContext);
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -20,14 +20,14 @@ const Form = () => {
     </>
   );
 };
-Form.propTypes = {
-  handleSubmit: PropTypes.func,
-  task: PropTypes.string,
-  setTask: PropTypes.func,
-};
-Form.defaultProp = {
-  handleSubmit: () => {},
-  task: "",
-  setTask: () => {},
-};
+// Form.propTypes = {
+//   handleSubmit: PropTypes.func,
+//   task: PropTypes.string,
+//   setTask: PropTypes.func,
+// };
+// Form.defaultProp = {
+//   handleSubmit: () => {},
+//   task: "",
+//   setTask: () => {},
+// };
 export default Form;
