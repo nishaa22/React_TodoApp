@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
+import React from "react";
 import { PropTypes } from "prop-types";
 
 const Input = (props) => {
-  const { value, handleBlurChange=()=>{}, handleInputChange } = props
+  const { value, handleBlurChange = () => {}, handleInputChange } = props;
   return (
     <>
       <input
@@ -30,7 +30,7 @@ Input.propTypes = {
 };
 Input.defaultProp = {
   value: "",
-  handleInputChange: () => { },
-  handleBlurChange: () => { },
+  handleInputChange: () => {},
+  handleBlurChange: () => {},
 };
 export default Input;

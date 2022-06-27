@@ -1,11 +1,8 @@
 import { PropTypes } from "prop-types";
-import React, { useContext } from "react";
-import TodoState from "../context/todoState";
+import React from "react";
 
-const Icons = () => {
-  const { handleEdit } = useContext(TodoState);
-  const {type,val:{id=""}={} } = useContext(TodoState);
-
+const Icons = (props) => {
+  const { type, id, handleEdit } = props;
   return (
     <>
       <i

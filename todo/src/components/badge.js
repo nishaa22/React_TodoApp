@@ -1,9 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-// import TodoState from "../context/todoState";
 
 const Badge = (props) => {
-  const { val:{isCompleted = false}={} } = props;
+  const { isCompleted } = props;
   return (
     <>
       <span className="mx-5">{isCompleted ? "" : ""}</span>
